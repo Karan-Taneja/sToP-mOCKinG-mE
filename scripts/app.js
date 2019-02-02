@@ -1,7 +1,7 @@
 
 //----FUNCTION
 
-const  mock = (string) => {
+const mock = (string) => {
 
     let mockString = "";
 
@@ -30,7 +30,7 @@ const website = document.querySelector('.js-website');
 //----EVENT LISTENERS
 
 window.addEventListener('load', (e) => {
-    website.innerText = mock('stopMocking.me');
+    website.innerText = mock('stopmocking.me');
 });
 
 input.addEventListener('input', (e) => {
