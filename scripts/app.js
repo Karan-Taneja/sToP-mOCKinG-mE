@@ -30,7 +30,7 @@ const website = document.querySelector('.js-website');
 //----EVENT LISTENERS
 
 window.addEventListener('load', (e) => {
-    website.innerText = mock(website.innerText);
+    website.innerText = mock('stopMocking.me');
 });
 
 input.addEventListener('input', (e) => {
