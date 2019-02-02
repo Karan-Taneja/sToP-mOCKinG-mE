@@ -1,0 +1,40 @@
+.field {
+    box-sizing: border-box;
+    display: block;
+    min-height: 25px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    margin-left: 50%;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.flex-container{
+    justify-content: center;
+    text-align: center;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.bg-pink{
+    background-color: rgb(28, 34, 117);
+}
+
+body{
+    background: rgb(70, 78, 193);
+}
+
+.notify{
+    font-size: 12px;
+    color: black;
+    background-color: gray;
+}
+
+.hidden{
+    display: none;
+}
