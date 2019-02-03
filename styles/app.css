@@ -7,21 +7,15 @@
     border-radius: 10px;
     padding: 5px 10px;
     margin-top: 15px;
-    margin-left: 50%;
     resize: none;
     overflow-y: scroll;
-}
-
-.flex-container{
-    justify-content: center;
-    text-align: center;
 }
 
 .input:focus{
     outline: none;
 }
 
-.bg-pink{
+.bg-blue{
     background-color: rgb(28, 34, 117);
 }
 
