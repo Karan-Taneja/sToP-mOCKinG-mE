@@ -74,6 +74,9 @@ input.addEventListener('input', (e) => {
         const outputString = mock(inputString);
         output.value=outputString;
     }
+    else{
+        output.value=input.value;
+    }
 })
 
 input.addEventListener('keyup', (e) => {
