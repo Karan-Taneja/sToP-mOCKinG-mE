@@ -31,9 +31,9 @@ const mock = (string) => {
             previousVal = randomizer;
         };
 
-        if(mockString === currString
+        if((mockString === currString
         || mockString === currString.toLowerCase()
-        || mockString === currString.toUpperCase()){
+        || mockString === currString.toUpperCase()) && mockString.length > 1){
             altString = "";
             for(let k = 0; k < mockString.length; k++){
 
