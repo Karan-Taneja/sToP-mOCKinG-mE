@@ -2,23 +2,57 @@
 //----FUNCTION
 
 const mock = (string) => {
+    const stringArr = string.split(" ");
+    const outputArr = [];
+    let previousVal = "";
+    let twoValsAgo = "";
 
-    let mockString = "";
+    for(let i = 0; i < stringArr.length; i++){
 
-    for(let i = 0; i < string.length; i++){
+        const currString = stringArr[i];
+        let mockString = "";
 
-        const randomizer = Math.round(Math.random());
+        for(let j = 0; j < currString.length; j++){
+            let randomizer = Math.round(Math.random());
+            
+            if(randomizer === previousVal === twoValsAgo){
+                if(randomizer === 1) randomizer = 0;
+                else if(randomizer === 0) randomizer = 1;
+            }
 
-        if(randomizer === 1){
-            mockString += string[i].toUpperCase();
-        }
-        else{
-            mockString += string[i].toLowerCase();
+            if(randomizer === 1){
+                mockString += currString[j].toUpperCase();
+            }
+            else{
+                mockString += currString[j].toLowerCase();
+            };
+
+            twoValsAgo = previousVal;
+            previousVal = randomizer;
         };
 
-    };
+        if(mockString === currString
+        || mockString === currString.toLowerCase()
+        || mockString === currString.toUpperCase()){
+            altString = "";
+            for(let k = 0; k < mockString.length; k++){
 
-    return mockString;
+                const currChar = mockString[k].toLowerCase();
+
+                if(k % 2 === 0){
+                    altString += currChar.toLowerCase();
+                }
+                else{
+                    altString += currChar.toUpperCase();
+                };
+            };
+            outputArr.push(altString);
+        }
+        else if (mockString !== ""){
+            outputArr.push(mockString);
+        }
+    }
+    return outputArr.join(" ");
 }
 
 //----QUERY SELECTORS
@@ -35,11 +69,11 @@ window.addEventListener('load', (e) => {
 
 input.addEventListener('input', (e) => {
 
-    const inputString = input.value
-    const outputString = mock(inputString);
-    
-    output.value=outputString;
-
+    if(input.value.length > 0){
+        const inputString = input.value
+        const outputString = mock(inputString);
+        output.value=outputString;
+    }
 })
 
 input.addEventListener('keyup', (e) => {
